@@ -43,10 +43,8 @@ export class RegisterComponent {
   tryRegister(value) {
     this.authService.doRegister(value)
       .then(res => {
-        this.firebaseService.createFavouritesProperty(res.user.uid);
         this.router.navigate(['/user']);
-        this.errorMessage = '';
-        this.successMessage = 'Your account has been created';
+        this.firebaseService.createFavouritesProperty(res.user.uid);
       }, err => {
         console.log(err);
         this.errorMessage = err.message;

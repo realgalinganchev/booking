@@ -11,7 +11,7 @@ export class VenuesDetailsResolver implements Resolve<any> {
 
     return new Promise((resolve, reject) => {
       const venueId = route.paramMap.get('id');
-      this.firebaseService.getEvent(venueId)
+      this.firebaseService.getVenue(venueId)
       .subscribe(
         data => {
           resolve(data);

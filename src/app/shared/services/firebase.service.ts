@@ -18,6 +18,9 @@ export class FirebaseService {
     getEvent(eventKey) {
         return this.db.collection('events').doc(eventKey).snapshotChanges();
     }
+    getVenue(venueKey) {
+        return this.db.collection('venues').doc(venueKey).snapshotChanges();
+    }
 
     updateUser(userKey, value) {
         value.nameToSearch = value.name.toLowerCase();
