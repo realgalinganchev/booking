@@ -42,6 +42,7 @@ import { VenuesDetailsResolver } from './venues/details/venues.resolver';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -80,6 +81,7 @@ import { VenuesDetailsResolver } from './venues/details/venues.resolver';
 
 
   ],
+  // tslint:disable-next-line: max-line-length
   providers: [AuthService, UserService, AuthGuard, FirebaseService, EventsDetailsResolver, VenuesDetailsResolver, AngularFireAuthGuard],
   bootstrap: [AppComponent],
 })

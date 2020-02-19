@@ -12,6 +12,11 @@ export class FirebaseService {
         return this.db.collection('/avatar').valueChanges();
     }
 
+    addToFavourites(venueKey, userKey) {
+        return this.db.collection('venues').doc(venueKey).set({
+            state: this.db.collection('users').doc(Object.assign({}, userKey)),
+        });
+    }
     getUser(userKey) {
         return this.db.collection('users').doc(userKey).snapshotChanges();
     }
@@ -21,9 +26,12 @@ export class FirebaseService {
     getVenue(venueKey) {
         return this.db.collection('venues').doc(venueKey).snapshotChanges();
     }
+    getUsersFavourites(userKey){
+        return this.db.collection('users').doc(userKey).snapshotChanges();
+    }
 
     updateUser(userKey, value) {
-        value.nameToSearch = value.name.toLowerCase();
+        // value.nameToSearch = value.name.toLowerCase();
         return this.db.collection('users').doc(userKey).set(value);
     }
     updateEvent(eventKey, value) {
@@ -54,6 +62,9 @@ export class FirebaseService {
     }
     getVenues() {
         return this.db.collection('venues').snapshotChanges();
+    }
+    getFavourites(userKey) {
+        return this.db.collection('users').doc(userKey).snapshotChanges();
     }
 
     searchUsers(searchValue) {

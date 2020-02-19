@@ -1,3 +1,4 @@
+
 import { FavouritesComponent } from './favourites/favourites.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { VenuesModule } from './venues/venues.module';
@@ -38,7 +39,7 @@ const routes: Routes = [
   },
   {
     path: 'favourites',
-    component: FavouritesComponent
+    component: FavouritesComponent,
   },
 
   {

@@ -40,7 +40,7 @@
     </ul>
 </div>
 
-<div class="list-group users-list">
+<div class="list-group venues-list">
   <div *ngFor="let item of items" class="list-group-item list-group-item-action flex-column align-items-start">
     <div class="row">
       <div class="col col-md-2 image-col">
@@ -54,7 +54,8 @@
       </div>
       <div class="col col-md-2 actions-col">
         <button class="btn btn-outline-primary action" (click)="viewDetails(item)" type="button">Details
-          <!-- <button class="icon" name="arrow-round-forward"></button> -->
+        </button>
+        <button class="btn btn-outline-primary action" (click)="addVenueToFavourites(item)" type="button">Add to Favourites
         </button>
       </div>
     </div>
