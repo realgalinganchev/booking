@@ -27,7 +27,8 @@ export class FavouritesComponent implements OnInit {
   ngOnInit() {
     this.getData();
   }
-///ngOnChanges or ngDoCheck
+
+
   getData() {
     this.db.collection('users').doc(firebase.auth().currentUser.uid)
       .get()
@@ -47,13 +48,17 @@ export class FavouritesComponent implements OnInit {
       const data = documentSnapshot.data().favourites;
       // console.log(`Retrieved data: ${JSON.stringify(data)}`);
       data.filter((favourite) => {
-        return  favourite.nameToSearch === nameToSearch;
+        return favourite.nameToSearch === nameToSearch;
       });
       const currentUserRef = this.db.collection('users').doc(firebase.auth().currentUser.uid);
       currentUserRef.update({
         favourites: firebase.firestore.FieldValue.arrayRemove(data[0])
+      }).then(() => {
+        this.getData();
       });
+
     });
+    // let favouritesRef = this.db.ref(`users/${firebase.auth().currentUser.uid}`);
   }
 }
 
