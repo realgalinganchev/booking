@@ -48,8 +48,6 @@ export class VenuesListComponent implements OnInit {
     const venueToBeAdded = this.db.collection('venues').doc(item.payload.doc.id);
     venueToBeAdded.get().toPromise().then(documentSnapshot => {
       const data = documentSnapshot.data();
-      // console.log(`Retrieved data: ${JSON.stringify(data)}`);
-
       const currentUserRef = this.db.collection('users').doc(this.customersUid);
       currentUserRef.update({
         favourites: firebase.firestore.FieldValue.arrayUnion(data)

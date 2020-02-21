@@ -1,18 +1,18 @@
-import { RouterModule, Routes } from '@angular/router';
-import { UserComponent } from './user/user.component';
+// import { RouterModule, Routes } from '@angular/router';
+// import { UserComponent } from './user.component';
 
 
-const routes: Routes = [
-    {
-        path: 'user',
-        children: [
-            {
-                path: '',
-                pathMatch: 'full',
-                component: UserComponent
-            },
-        ]
-    }
-];
+// const routes: Routes = [
+//     {
+//         path: 'user',
+//         children: [
+//             {
+//                 path: '',
+//                 pathMatch: 'full',
+//                 component: UserComponent
+//             },
+//         ]
+//     }
+// ];
 
-export const UserRoutingModule = RouterModule.forChild(routes);
+// export const UserRoutingModule = RouterModule.forChild(routes);

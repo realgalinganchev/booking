@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import * as firebase from 'firebase';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,11 +9,14 @@ import { Router } from '@angular/router';
 })
 export class NavtabsComponent implements OnInit {
 
+  customersUid: string;
+
   constructor(
     private router: Router
   ) { }
 
   ngOnInit() {
+    this.customersUid = firebase.auth().currentUser.uid;
   }
 
 }

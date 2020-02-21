@@ -2,8 +2,6 @@
 import { RouterModule, Routes } from '@angular/router';
 import { CreateVenueComponent } from './create/create.component';
 import { VenuesDetailsComponent } from './details/details.component';
-import { AuthGuard } from '../auth.guard';
-import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 import { redirectUnauthorizedTo, canActivate } from '@angular/fire/auth-guard';
 import { VenuesDetailsResolver } from './details/venues.resolver';
 import { VenuesListComponent } from './list/list.component';

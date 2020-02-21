@@ -1,7 +1,7 @@
 <div class="navtabs-container">
-  <nav  class="navlinks-container" mat-tab-nav-bar fxFlex fxLayout="row" fxLayoutAlign="center center">
+  <nav class="navlinks-container" mat-tab-nav-bar fxFlex fxLayout="row" fxLayoutAlign="center center">
     <div class="navlinks-container">
-      
+
       <a mat-tab-link routerLink="/" routerLinkActive #home="routerLinkActive" [routerLinkActiveOptions]="{exact:true}"
         [active]="home.isActive">
         <b>HOME</b>
@@ -26,6 +26,7 @@
         [routerLinkActiveOptions]="{exact:true}" [active]="user.isActive">
         <b>PROFILE</b>
       </a>
+
     </div>
   </nav>
 

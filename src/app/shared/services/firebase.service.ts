@@ -60,10 +60,10 @@ export class FirebaseService {
             .snapshotChanges();
     }
     searchEventsByPrice(value) {
-        return this.db.collection('events', ref => ref.orderBy('price').startAt(value)).snapshotChanges();
+        return this.db.collection('events', ref => ref.orderBy('price').endAt(value)).snapshotChanges();
     }
     searchVenuesByPrice(value) {
-        return this.db.collection('venues', ref => ref.orderBy('price').startAt(value)).snapshotChanges();
+        return this.db.collection('venues', ref => ref.orderBy('price').endAt(value)).snapshotChanges();
     }
 
     createEvent(value, avatar) {

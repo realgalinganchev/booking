@@ -5,27 +5,27 @@
         placeholder="Search by name..." (keyup)="searchByName()">
     </div>
   </div>
-  <div class="col-md-6 filter-by-age">
+  <div class="col-md-6 filter-by-price">
     <div class="row">
       <div class="col-md-auto title">
-        <span>Filter by price (more than):</span>
+        <span>Filter by price (less than):</span>
       </div>
       <div class="col">
         <span>0 </span>
-        <mat-slider class="age-slider" max="100" min="0" step="1" thumbLabel="true" (ngModel)="priceValue"
+        <mat-slider class="price-slider" max="100" min="0" step="1" thumbLabel="true" (ngModel)="priceValue"
           (change)="rangeChange($event)">
         </mat-slider>
         <span> 100</span>
       </div>
     </div>
   </div>
-    <ul class="nav flex-column">
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/venues/create">
-          <button class="btn btn-outline-primary action" name="add">Add new venue</button>
-        </a>
-      </li>
-    </ul>
+  <ul class="nav flex-column">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/venues/create">
+        <button class="btn btn-outline-primary action" name="add">Add new venue</button>
+      </a>
+    </li>
+  </ul>
 </div>
 
 <div class="list-group venues-list">
@@ -35,10 +35,10 @@
         <img class="img-avatar" src="{{avatarLink}}">
       </div>
       <div class="col col-md-8 text-col">
-        <h5 class="mb-1">{{item.payload.doc.data().name}} </h5>
-        <h5 class="mb-1">{{item.payload.doc.data().location}} </h5>
-        <h5 class="mb-1">{{item.payload.doc.data().music}} </h5>
-        <small>Price: {{item.payload.doc.data().price}}</small>
+        <h1 class="mb-1">{{item.payload.doc.data().name}} </h1>
+        <h4 class="mb-1">Location: {{item.payload.doc.data().location}} </h4>
+        <h4 class="mb-1">Music type: {{item.payload.doc.data().music}} </h4>
+        <small>Price: {{item.payload.doc.data().price}} lv.</small>
       </div>
       <div class="col col-md-2 actions-col">
         <button class="btn btn-outline-primary action" (click)="viewDetails(item)" type="button">Details

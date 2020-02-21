@@ -1,3 +1,4 @@
+import { UserComponent } from './user/user.component';
 import { VenuesDetailsComponent } from './venues/details/details.component';
 import { CreateVenueComponent } from './venues/create/create.component';
 import { VenuesListComponent } from './venues/list/list.component';
@@ -18,7 +19,6 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { UserModule } from './user/user.module';
 import { CoreModule } from './core/core.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
@@ -51,7 +51,8 @@ import { VenuesDetailsResolver } from './venues/details/venues.resolver';
     FavouritesComponent,
     VenuesListComponent,
     CreateVenueComponent,
-    VenuesDetailsComponent
+    VenuesDetailsComponent,
+    UserComponent
 
   ],
   imports: [
@@ -60,7 +61,6 @@ import { VenuesDetailsResolver } from './venues/details/venues.resolver';
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
-    UserModule,
     FlexLayoutModule,
     CoreModule,
     VenuesModule,
