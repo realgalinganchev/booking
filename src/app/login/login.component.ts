@@ -46,9 +46,4 @@ export class LoginComponent {
       });
   }
 
-  // handleLogin({ email, password }: { email: string, password: string }) {
-  //   this.userService.login(email, password);
-  //   this.router.navigate(['/user/profile']);
-  // }
-
 }

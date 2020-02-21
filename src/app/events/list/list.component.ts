@@ -14,6 +14,7 @@ export class EventsListComponent implements OnInit {
   items: Array<any>;
   priceFilteredItems: Array<any>;
   nameFilteredItems: Array<any>;
+  avatarLink: 'https://i.pinimg.com/280x280_RS/8e/7c/08/8e7c086dec4bf5fe8101440c26b21870.jpg';
 
   constructor(
     public firebaseService: FirebaseService,
@@ -25,6 +26,7 @@ export class EventsListComponent implements OnInit {
   }
 
   getData() {
+    this.avatarLink = 'https://i.pinimg.com/280x280_RS/8e/7c/08/8e7c086dec4bf5fe8101440c26b21870.jpg';
     this.firebaseService.getEvents()
     .subscribe(result => {
       this.items = result;

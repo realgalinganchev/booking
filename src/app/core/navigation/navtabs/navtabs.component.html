@@ -1,42 +1,42 @@
 <div class="navtabs-container">
-    <nav mat-tab-nav-bar mat-tab-nav-bar fxFlex fxLayout fxLayoutAlign="center center">
+    <nav mat-tab-nav-bar fxFlex fxLayout="row" fxLayoutAlign="center center">
       <a mat-tab-link routerLink="/"
        routerLinkActive #home="routerLinkActive"
+       [routerLinkActiveOptions]="{exact:true}"
        [active]="home.isActive">
        Home
-       </a>
-
-       <a mat-tab-link routerLink="/deals"
-       routerLinkActive #deals="routerLinkActive"
-       [active]="deals.isActive">
-       Deals
-       </a>
-
-       <a mat-tab-link routerLink="/favourites"
-       routerLinkActive #favourites="routerLinkActive"
-       [active]="favourites.isActive">
-       Favourites
        </a>
   
        <a mat-tab-link routerLink="/venues"
        routerLinkActive #venues="routerLinkActive"
+       [routerLinkActiveOptions]="{exact:true}"
        [active]="venues.isActive">
        Venues
+       </a>
+       
+       <a mat-tab-link routerLink="/favourites"
+       routerLinkActive #favourites="routerLinkActive"
+       [routerLinkActiveOptions]="{exact:true}"
+       [active]="favourites.isActive">
+       Favourites
        </a>
   
        <a mat-tab-link routerLink="/events"
        routerLinkActive #events="routerLinkActive"
+       [routerLinkActiveOptions]="{exact:true}"
        [active]="events.isActive">
        Events
        </a>
   
        <a mat-tab-link routerLink="/calendar"
        routerLinkActive #calendar="routerLinkActive"
+       [routerLinkActiveOptions]="{exact:true}"
        [active]="calendar.isActive">
        Calendar
        </a>
        <a mat-tab-link routerLink="/user"
        routerLinkActive #user="routerLinkActive"
+       [routerLinkActiveOptions]="{exact:true}"
        [active]="user.isActive">
        Profile
        </a>

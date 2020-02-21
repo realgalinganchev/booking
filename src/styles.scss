@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Karla&display=swap');
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "~bootstrap/dist/css/bootstrap.css";
 
 body {
@@ -12,14 +11,10 @@ html{
     font-family: 'Karla', sans-serif;
 }
 .mat-toolbar.mat-primary {
-    background: #007bff;
+    background: purple;
     color: white;
   }
-// body{
-//     padding: 0.5%;
-//     font-family: inherit;
-//     scroll-behavior: smooth;
-// }
+
 form.form-inline div.form-group {
     margin-right: 2%;
     
@@ -32,9 +27,9 @@ p.text-bold {
     font-style: italic;
 }
 
-div.row form.form-inline {
-    text-align: center;
-}
+// div.row form.form-inline {
+//     text-align: center;
+// }
 
 
 h1{

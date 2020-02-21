@@ -16,6 +16,8 @@ export class VenuesListComponent implements OnInit {
   items: Array<any>;
   priceFilteredItems: Array<any>;
   nameFilteredItems: Array<any>;
+  customersUid: string;
+  avatarLink = 'https://a.wattpad.com/useravatar/Rachey_B.256.684953.jpg';
 
   constructor(
     public firebaseService: FirebaseService,
@@ -25,9 +27,11 @@ export class VenuesListComponent implements OnInit {
 
   ngOnInit() {
     this.getData();
+    this.customersUid = firebase.auth().currentUser.uid;
   }
 
   getData() {
+    this.avatarLink = 'https://a.wattpad.com/useravatar/Rachey_B.256.684953.jpg';
     this.firebaseService.getVenues()
       .subscribe(result => {
         this.items = result;
@@ -44,9 +48,9 @@ export class VenuesListComponent implements OnInit {
     const venueToBeAdded = this.db.collection('venues').doc(item.payload.doc.id);
     venueToBeAdded.get().toPromise().then(documentSnapshot => {
       const data = documentSnapshot.data();
-      // console.log(`Retrieved data: ${JSON.stringify(data)}`); 
+      // console.log(`Retrieved data: ${JSON.stringify(data)}`);
 
-      const currentUserRef = this.db.collection('users').doc(firebase.auth().currentUser.uid);
+      const currentUserRef = this.db.collection('users').doc(this.customersUid);
       currentUserRef.update({
         favourites: firebase.firestore.FieldValue.arrayUnion(data)
       });

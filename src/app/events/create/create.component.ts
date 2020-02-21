@@ -14,7 +14,7 @@ import { FirebaseService } from '../../shared/services/firebase.service';
 export class CreateEventComponent implements OnInit {
 
   exampleForm: FormGroup;
-  avatarLink = 'https://media-cdn.tripadvisor.com/media/photo-s/01/3d/58/c7/dancing-to-billy-jean.jpg';
+  avatarLink = 'https://i.pinimg.com/280x280_RS/8e/7c/08/8e7c086dec4bf5fe8101440c26b21870.jpg';
 
   validationMessages = {
     name: [
@@ -65,7 +65,7 @@ export class CreateEventComponent implements OnInit {
   }
 
   resetFields() {
-    this.avatarLink = 'https://media-cdn.tripadvisor.com/media/photo-s/01/3d/58/c7/dancing-to-billy-jean.jpg';
+    this.avatarLink = 'https://i.pinimg.com/280x280_RS/8e/7c/08/8e7c086dec4bf5fe8101440c26b21870.jpg';
     this.exampleForm = this.fb.group({
       name: new FormControl('', Validators.required),
       location: new FormControl('', Validators.required),

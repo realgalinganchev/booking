@@ -15,6 +15,7 @@ export class VenuesDetailsComponent implements OnInit {
 
   exampleForm: FormGroup;
   item: any;
+  avatarLink = 'https://a.wattpad.com/useravatar/Rachey_B.256.684953.jpg';
 
   validationMessages = {
     name: [
@@ -51,6 +52,7 @@ export class VenuesDetailsComponent implements OnInit {
   }
 
   createForm() {
+    this.avatarLink = 'https://a.wattpad.com/useravatar/Rachey_B.256.684953.jpg';
     this.exampleForm = this.fb.group({
       name: [this.item.name, Validators.required],
       location: [this.item.location, Validators.required],

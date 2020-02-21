@@ -1,20 +1,8 @@
 <div class="row">
-    <ul class="nav flex-column">
-        <li class="nav-item">
-          <a class="nav-link active" routerLink="/">
-                  <button name="list">Home</button>
-              </a>
-        </li>
-      </ul>
-    <div class="col-md-4 offset-md-1">
+    <div class="col-md-3 offset-md-1">
       <div class="input-group">
         <input type="text" class="form-control" [(ngModel)]="searchValue" [ngModelOptions]="{standalone: true}"
           placeholder="Search by name..." (keyup)="searchByName()">
-        <div class="input-group-append">
-          <span class="input-group-text">
-            <!-- <ion-icon class="icon" name="search"></ion-icon> -->
-          </span>
-        </div>
       </div>
     </div>
     <div class="col-md-6 filter-by-age">
@@ -34,17 +22,17 @@
     <ul class="nav flex-column">
         <li class="nav-item">
           <a class="nav-link" routerLink="/events/create">
-                  <button name="add">Create event</button>
+                  <button class="btn btn-outline-primary action" name="add">Create event</button>
               </a>
         </li>
       </ul>
   </div>
   
-  <div class="list-group users-list">
+  <div class="list-group events-list">
     <div *ngFor="let item of items" class="list-group-item list-group-item-action flex-column align-items-start">
       <div class="row">
         <div class="col col-md-2 image-col">
-          <img class="image" [src]="item.payload.doc.data().avatar">
+          <img class="img-avatar" src="{{avatarLink}}">
         </div>
         <div class="col col-md-8 text-col">
           <h5 class="mb-1">{{item.payload.doc.data().name}} </h5>

@@ -15,7 +15,7 @@ export class EventsDetailsComponent implements OnInit {
 
   exampleForm: FormGroup;
   item: any;
-
+  avatarLink: 'https://i.pinimg.com/280x280_RS/8e/7c/08/8e7c086dec4bf5fe8101440c26b21870.jpg';
   validationMessages = {
     name: [
       { type: 'required', message: 'Name is required.' }
@@ -51,6 +51,7 @@ export class EventsDetailsComponent implements OnInit {
   }
 
   createForm() {
+    this.avatarLink = 'https://i.pinimg.com/280x280_RS/8e/7c/08/8e7c086dec4bf5fe8101440c26b21870.jpg';
     this.exampleForm = this.fb.group({
       name: [this.item.name, Validators.required],
       location: [this.item.location, Validators.required],
