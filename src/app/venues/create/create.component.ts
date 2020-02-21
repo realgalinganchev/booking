@@ -1,8 +1,6 @@
-import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { MatDialog } from '@angular/material';
-import { AvatarDialogComponent } from '../../avatar-dialog/avatar-dialog.component';
 import { Router } from '@angular/router';
 import { FirebaseService } from '../../shared/services/firebase.service';
 
@@ -48,19 +46,6 @@ export class CreateVenueComponent implements OnInit {
       location: ['', Validators.required],
       music: ['', Validators.required],
       price: ['', Validators.required]
-    });
-  }
-
-  openDialog() {
-    const dialogRef = this.dialog.open(AvatarDialogComponent, {
-      height: '400px',
-      width: '400px',
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        this.avatarLink = result.link;
-      }
     });
   }
 

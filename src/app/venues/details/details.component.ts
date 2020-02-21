@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { MatDialog } from '@angular/material';
-import { AvatarDialogComponent } from '../../avatar-dialog/avatar-dialog.component';
 import { FirebaseService } from '../../shared/services/firebase.service';
 import { Router } from '@angular/router';
 
@@ -58,19 +57,6 @@ export class VenuesDetailsComponent implements OnInit {
       location: [this.item.location, Validators.required],
       music: [this.item.music, Validators.required],
       price: [this.item.price, Validators.required],
-    });
-  }
-
-  openDialog() {
-    const dialogRef = this.dialog.open(AvatarDialogComponent, {
-      height: '400px',
-      width: '400px'
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        this.item.avatar = result.link;
-      }
     });
   }
 

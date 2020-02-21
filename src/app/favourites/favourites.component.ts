@@ -13,10 +13,11 @@ export class FavouritesComponent implements OnInit {
 
   priceValue = 0;
   searchValue = '';
-  // items: Array<any>;
+
   items: any;
   priceFilteredItems: Array<any>;
   nameFilteredItems: Array<any>;
+  avatarLink: 'https://a.wattpad.com/useravatar/Rachey_B.256.684953.jpg';
 
   constructor(
     public firebaseService: FirebaseService,
@@ -30,6 +31,7 @@ export class FavouritesComponent implements OnInit {
 
 
   getData() {
+    this.avatarLink = 'https://a.wattpad.com/useravatar/Rachey_B.256.684953.jpg';
     this.db.collection('users').doc(firebase.auth().currentUser.uid)
       .get()
       .toPromise()

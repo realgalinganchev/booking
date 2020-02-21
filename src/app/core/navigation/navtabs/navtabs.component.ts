@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./navtabs.component.scss']
 })
 export class NavtabsComponent implements OnInit {
-  // get isLogged() { return this.userService.isLogged; }
+  
   constructor(
     private userService: UserService,
     private router: Router
@@ -16,4 +16,5 @@ export class NavtabsComponent implements OnInit {
 
   ngOnInit() {
   }
+  
 }

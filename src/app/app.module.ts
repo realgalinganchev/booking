@@ -19,8 +19,6 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { UserModule } from './user/user.module';
-import { DealsComponent } from './deals/deals.component';
-import { CalendarComponent } from './calendar/calendar.component';
 import { CoreModule } from './core/core.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
@@ -31,7 +29,6 @@ import { environment } from '../environments/environment';
 import { AuthService } from './shared/services/auth.service';
 import { UserService } from './shared/services/user.service';
 import { AuthGuard } from './auth.guard';
-import { AvatarDialogComponent } from './avatar-dialog/avatar-dialog.component';
 import { FirebaseService } from './shared/services/firebase.service';
 import { CreateEventComponent } from './events/create/create.component';
 import { EventsListComponent } from './events/list/list.component';
@@ -50,9 +47,6 @@ import { VenuesDetailsResolver } from './venues/details/venues.resolver';
     LoginComponent,
     RegisterComponent,
     NotFoundComponent,
-    DealsComponent,
-    CalendarComponent,
-    AvatarDialogComponent,
     CreateEventComponent,
     EventsListComponent,
     EventsDetailsComponent,

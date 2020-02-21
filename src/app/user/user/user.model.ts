@@ -3,6 +3,5 @@ export class FirebaseUserModel {
     name: string;
     constructor() {
             this.email = '';
-            this.name = '';
     }
 }

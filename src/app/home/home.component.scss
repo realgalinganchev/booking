@@ -1,0 +1,26 @@
+.wrapper{
+    
+    background-image: url('../../assets/images/background4.jpg');
+    text-align: center;
+    font-size: 18px;
+    padding :50px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+    color: white;
+    min-height: 100%;
+    min-width: 1024px;
+    opacity: 0.67;
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+    
+    /* Set up positioning */
+    position: fixed;
+    top: auto;
+    left: 0;
+}
+.wrapper a{
+    position: relative;
+    font: 35px;
+}

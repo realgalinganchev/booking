@@ -1,46 +1,16 @@
-<!-- <div class="col-md-4"></div>
-<div class="col-md-4">
-  <h1 class="text-italic">Register</h1>
-  <form #registerForm="ngForm">
-    <div class="form-group">
-      <label for="email">Email address</label>
-      <input #emailInput="ngModel" type="text" ngModel name="email" id="email" class="form-control"
-        placeholder="john.doe@domain.bg" pattern="[a-zA-Z0-9.]+@[a-zA-Z0-9.-]+\.[a-z]{2,4}" required>
-      <p class="error-message" *ngIf="emailInput.invalid && emailInput.touched">Please enter valid gmail.com email!</p>
-    </div>
-    <div #passwordsGroup="ngModelGroup" ngModelGroup="passwords" appPasswordMatch>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input ngModel
-          [ngClass]="{ 'password-match-invalid': passwordsGroup.invalid, 'password-match-touched': passwordsGroup.touched }"
-          type="password" name="password" id="password" class="form-control" placeholder="************" required
-          minlength="6">
-      </div>
-      <div class="form-group">
-        <label for="rePassword">Re-Password</label>
-        <input ngModel
-          [ngClass]="{ 'password-match-invalid': passwordsGroup.invalid, 'password-match-touched': passwordsGroup.touched }"
-          type="password" name="rePassword" id="rePassword" class="form-control" placeholder="************" required>
-      </div>
-      <p class="error-message" *ngIf="passwordsGroup.touched && passwordsGroup.invalid">Passwords don't match!</p>
-    </div>
-    <button type="submit" class="btn btn-primary">Register</button>
-  </form>
-  <p>Already Registered? <a routerLink="/login">Login</a>.</p>
-</div> -->
-<h1 class="header">Create an account for free!</h1>
-<div class="container">
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <form #registerForm="ngForm">
+<div class="wrapper">
+  <h1 class="header">Create an account for free!</h1>
+  <div class="container">
+    <div class="row">
+
+      <form class="register-form" #registerForm="ngForm">
         <div class="form-group">
-          <label for="email">Email address</label>
+          <label for="email">Email</label>
           <input #emailInput="ngModel" type="text" ngModel name="email" id="email" class="form-control"
             placeholder="john.doe@domain.bg" pattern="[a-zA-Z0-9.]+@[a-zA-Z0-9.-]+\.[a-z]{2,4}" required>
           <p class="error-message" *ngIf="emailInput.invalid && emailInput.touched">Please enter a valid email!
           </p>
         </div>
-        <!-- {{emailInput.value | json}} -->
         <div #passwordsGroup="ngModelGroup" ngModelGroup="passwords" appPasswordMatch>
           <div class="form-group">
             <label for="password">Password</label>
@@ -58,19 +28,17 @@
           </div>
           <p class="error-message" *ngIf="passwordsGroup.touched && passwordsGroup.invalid">Passwords don't match!</p>
         </div>
-        <button [disabled]="registerForm.invalid" type="submit" (click)="tryRegister(registerForm.value)" class="btn btn-success">Register</button>
+        <div class="register-button">
+          <button [disabled]="registerForm.invalid" type="submit" (click)="tryRegister(registerForm.value)"
+            class="btn btn-success">Register</button>
+          <p class="black">...or you can just...</p>
+        </div>
+
+        <button [ngStyle]="{'color':'white'}" type="button" class="btn btn-primary btn-block" (click)="tryFacebookLogin()">Register with
+          Facebook</button>
+
+        <p class="black">Already have an account? <a class="black" routerLink="/login">Login</a>.</p>
       </form>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <button type="button" class="btn btn-primary btn-block" (click)="tryFacebookLogin()">Register with
-        Facebook</button>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <p>Already have an account? <a routerLink="/login">Login</a>.</p>
     </div>
   </div>
 </div>

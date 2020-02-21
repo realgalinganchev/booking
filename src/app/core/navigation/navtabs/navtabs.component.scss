@@ -1,3 +1,19 @@
 .toolbar-flex {
     flex: 2 1 auto;
   }
+.navlinks-container{
+  display: block;
+  margin: 0 auto;
+}
+.navlinks-container a{
+  color: blue;
+  font-size: 1rem;
+}
+.mat-tab-label-active {
+  background-color: rgba(255, 0, 255, 0);
+  color: blue;
+  opacity: 1;
+}
+.navlinks-container{
+  background-color: rgba(107, 3, 107, 0.589);
+}

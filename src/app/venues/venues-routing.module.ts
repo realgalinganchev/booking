@@ -26,7 +26,13 @@ const routes: Routes = [
         loadChildren: '../core/core.module#CoreModule',
         ...canActivate(redirectUnauthorizedToLogin)
       },
-      { path: 'details/:id', component: VenuesDetailsComponent, resolve: {data : VenuesDetailsResolver} },
+      {
+        path: 'details/:id',
+        component: VenuesDetailsComponent,
+        resolve: { data: VenuesDetailsResolver },
+        loadChildren: '../core/core.module#CoreModule',
+        ...canActivate(redirectUnauthorizedToLogin)
+      },
     ]
   }
 ];

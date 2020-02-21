@@ -1,7 +1,11 @@
 <mat-toolbar color="primary">
     <div>
-        <button mat-icon-button (click)="onToggleOpenSidenav()">
-            <mat-icon>menu</mat-icon>
+        <button mat-icon-button color="primary" (click)="onToggleOpenSidenav()">
+            <mat-icon [ngStyle]="{'color':'primary'}"> menu</mat-icon>
         </button>
     </div>
+    <div class="header">
+        <p>Booking - Night Life Sofia</p>
+    </div>
+
 </mat-toolbar>

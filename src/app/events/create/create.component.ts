@@ -2,7 +2,6 @@ import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { MatDialog } from '@angular/material';
-import { AvatarDialogComponent } from '../../avatar-dialog/avatar-dialog.component';
 import { Router } from '@angular/router';
 import { FirebaseService } from '../../shared/services/firebase.service';
 
@@ -51,19 +50,6 @@ export class CreateEventComponent implements OnInit {
     });
   }
 
-  openDialog() {
-    const dialogRef = this.dialog.open(AvatarDialogComponent, {
-      height: '400px',
-      width: '400px',
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        this.avatarLink = result.link;
-      }
-    });
-  }
-
   resetFields() {
     this.avatarLink = 'https://i.pinimg.com/280x280_RS/8e/7c/08/8e7c086dec4bf5fe8101440c26b21870.jpg';
     this.exampleForm = this.fb.group({
@@ -74,7 +60,6 @@ export class CreateEventComponent implements OnInit {
     });
   }
 
-  // this.avatarLink ??
   onSubmit(value) {
     this.firebaseService.createEvent(value, this.avatarLink)
       .then(
@@ -84,5 +69,4 @@ export class CreateEventComponent implements OnInit {
         }
       );
   }
-
 }

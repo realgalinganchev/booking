@@ -3,9 +3,6 @@ import { EventsListComponent } from './../events/list/list.component';
 import { RouterModule, Routes } from '@angular/router';
 import { CreateEventComponent } from './create/create.component';
 import { EventsDetailsComponent } from './details/details.component';
-import { AuthGuard } from '../auth.guard';
-import { CalendarComponent } from '../calendar/calendar.component';
-import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 import { redirectUnauthorizedTo, canActivate } from '@angular/fire/auth-guard';
 
 
@@ -26,7 +23,13 @@ const routes: Routes = [
         loadChildren: '../core/core.module#CoreModule',
         ...canActivate(redirectUnauthorizedToLogin)
       },
-      { path: 'details/:id', component: EventsDetailsComponent, resolve: {data : EventsDetailsResolver} },
+      {
+        path: 'details/:id',
+        component: EventsDetailsComponent,
+        resolve: { data: EventsDetailsResolver },
+        loadChildren: '../core/core.module#CoreModule',
+        ...canActivate(redirectUnauthorizedToLogin)
+      },
     ]
   }
 ];
