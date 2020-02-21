@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { UserService } from '../shared/services/user.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../shared/services/auth.service';
@@ -17,7 +16,6 @@ export class LoginComponent {
   errorMessage: '';
 
   constructor(
-    private userService: UserService,
     private router: Router,
     private fb: FormBuilder,
     public authService: AuthService,

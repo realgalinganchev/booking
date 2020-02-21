@@ -17,22 +17,14 @@ export class FirebaseService {
             state: this.db.collection('users').doc(Object.assign({}, userKey)),
         });
     }
-    getUser(userKey) {
-        return this.db.collection('users').doc(userKey).snapshotChanges();
-    }
     getEvent(eventKey) {
         return this.db.collection('events').doc(eventKey).snapshotChanges();
     }
     getVenue(venueKey) {
         return this.db.collection('venues').doc(venueKey).snapshotChanges();
     }
-    getUsersFavourites(userKey){
+    getUsersFavourites(userKey) {
         return this.db.collection('users').doc(userKey).snapshotChanges();
-    }
-
-    updateUser(userKey, value) {
-        // value.nameToSearch = value.name.toLowerCase();
-        return this.db.collection('users').doc(userKey).set(value);
     }
     updateEvent(eventKey, value) {
         value.nameToSearch = value.name.toLowerCase();
@@ -42,20 +34,11 @@ export class FirebaseService {
         value.nameToSearch = value.name.toLowerCase();
         return this.db.collection('venues').doc(venueKey).set(value);
     }
-
-
-    deleteUser(userKey) {
-        return this.db.collection('users').doc(userKey).delete();
-    }
     deleteEvent(eventKey) {
         return this.db.collection('events').doc(eventKey).delete();
     }
     deleteVenue(venueKey) {
         return this.db.collection('venues').doc(venueKey).delete();
-    }
-
-    getUsers() {
-        return this.db.collection('users').snapshotChanges();
     }
     getEvents() {
         return this.db.collection('events').snapshotChanges();
@@ -65,12 +48,6 @@ export class FirebaseService {
     }
     getFavourites(userKey) {
         return this.db.collection('users').doc(userKey).snapshotChanges();
-    }
-
-    searchUsers(searchValue) {
-        return this.db.collection('users', ref => ref.where('nameToSearch', '>=', searchValue)
-            .where('nameToSearch', '<=', searchValue + '\uf8ff'))
-            .snapshotChanges();
     }
     searchEvents(searchValue) {
         return this.db.collection('events', ref => ref.where('nameToSearch', '>=', searchValue)
@@ -82,11 +59,6 @@ export class FirebaseService {
             .where('nameToSearch', '<=', searchValue + '\uf8ff'))
             .snapshotChanges();
     }
-
-
-    searchUsersByAge(value) {
-        return this.db.collection('users', ref => ref.orderBy('age').startAt(value)).snapshotChanges();
-    }
     searchEventsByPrice(value) {
         return this.db.collection('events', ref => ref.orderBy('price').startAt(value)).snapshotChanges();
     }
@@ -94,16 +66,6 @@ export class FirebaseService {
         return this.db.collection('venues', ref => ref.orderBy('price').startAt(value)).snapshotChanges();
     }
 
-    createUser(value, avatar) {
-        return this.db.collection('users').add({
-            name: value.name,
-            nameToSearch: value.name.toLowerCase(),
-            surname: value.surname,
-            // tslint:disable-next-line: radix
-            age: parseInt(value.age),
-            avatar
-        });
-    }
     createEvent(value, avatar) {
         return this.db.collection('events').add({
             name: value.name,
@@ -121,7 +83,6 @@ export class FirebaseService {
             name: value.name,
             nameToSearch: value.name.toLowerCase(),
             location: value.location,
-            // tslint:disable-next-line: radix
             music: value.music,
             // tslint:disable-next-line: radix
             price: parseInt(value.price),

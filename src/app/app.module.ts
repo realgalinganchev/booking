@@ -27,8 +27,6 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 import { environment } from '../environments/environment';
 import { AuthService } from './shared/services/auth.service';
-import { UserService } from './shared/services/user.service';
-import { AuthGuard } from './auth.guard';
 import { FirebaseService } from './shared/services/firebase.service';
 import { CreateEventComponent } from './events/create/create.component';
 import { EventsListComponent } from './events/list/list.component';
@@ -75,8 +73,7 @@ import { VenuesDetailsResolver } from './venues/details/venues.resolver';
 
 
   ],
-  // tslint:disable-next-line: max-line-length
-  providers: [AuthService, UserService, AuthGuard, FirebaseService, EventsDetailsResolver, VenuesDetailsResolver, AngularFireAuthGuard],
+  providers: [AuthService, FirebaseService, EventsDetailsResolver, VenuesDetailsResolver, AngularFireAuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
