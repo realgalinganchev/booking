@@ -1,6 +1,12 @@
-<nav class="navbar navbar-default navbar-static-top navbar-inverse">
-  <div class="container">
-    <button type="button" class="btn btn-primary btn-block" (click)="logout()">Logout</button>
+<div class="wrapper">
+
+  <h1 class="header">Welcome, {{currentUserEmail}}!</h1>
+  <h2>Are you ready to dive into the hottest night clubs in Sofia?</h2>
+  <p>...if this is not the case - please click the button below!   </p>
+  <div class="row submit-button-container">
+    <div class="col-md-4">
+      <button mat-raised-button class="submit-button" color="accent" type="button" (click)="logout()">Logout</button>
+    </div>
   </div>
-</nav>
-<h1 class="header">Logged as {{currentUserEmail}}</h1>
+
+</div>

@@ -8,10 +8,6 @@ export class FirebaseService {
 
     constructor(public db: AngularFirestore) { }
 
-    getAvatars() {
-        return this.db.collection('/avatar').valueChanges();
-    }
-
     addToFavourites(venueKey, userKey) {
         return this.db.collection('venues').doc(venueKey).set({
             state: this.db.collection('users').doc(Object.assign({}, userKey)),

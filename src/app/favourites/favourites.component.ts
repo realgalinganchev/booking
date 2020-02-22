@@ -17,8 +17,8 @@ export class FavouritesComponent implements OnInit {
   items: any;
   priceFilteredItems: Array<any>;
   nameFilteredItems: Array<any>;
-  avatarLink: 'https://a.wattpad.com/useravatar/Rachey_B.256.684953.jpg';
-
+  avatarLink: string;
+  noFavouritesLink : string;
   constructor(
     public firebaseService: FirebaseService,
     private router: Router,
@@ -32,13 +32,15 @@ export class FavouritesComponent implements OnInit {
 
   getData() {
     this.avatarLink = 'https://a.wattpad.com/useravatar/Rachey_B.256.684953.jpg';
+    // tslint:disable-next-line: max-line-length
+    this.noFavouritesLink = 'https://d3vhc53cl8e8km.cloudfront.net/hello-staging/wp-content/uploads/2016/06/04224142/mag_mylifeasanintrovertedraver_720.jpg';
     this.db.collection('users').doc(firebase.auth().currentUser.uid)
       .get()
       .toPromise()
       .then((doc) => {
         if (doc.exists) {
           this.items = (doc.data().favourites);
-          // console.log(this.items);
+          console.log(this.items);
         }
       }
       );

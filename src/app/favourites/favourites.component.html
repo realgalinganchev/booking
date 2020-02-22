@@ -18,5 +18,8 @@
       </div>
     </div>
   </div>
-  <p *ngIf="!items"> You don't have any venues added to favourites yet! Please go to Venues to add some!</p>
+  <div *ngIf="items.length ===0">
+    <div class="msg"> You don't have any venues added to favourites yet! Please go to Venues to add some!</div>
+    <img class="img-noFavourites" src="{{noFavouritesLink}}">
+  </div>
 </div>
