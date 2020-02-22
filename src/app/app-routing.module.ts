@@ -35,14 +35,14 @@ const routes: Routes = [
     path: 'favourites',
     pathMatch: 'full',
     component: FavouritesComponent,
-    loadChildren: '../core/core.module#CoreModule',
+    loadChildren: './core/core.module#CoreModule',
     ...canActivate(redirectUnauthorizedToLogin)
   },
   {
     path: 'user',
     pathMatch: 'full',
     component: UserComponent,
-    loadChildren: '../core/core.module#CoreModule',
+    loadChildren: './core/core.module#CoreModule',
     ...canActivate(redirectUnauthorizedToLogin)
   },
   {
